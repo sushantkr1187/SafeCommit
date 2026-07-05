@@ -1,0 +1,104 @@
+# ============================================================================
+# Build System
+# ============================================================================
+
+[build-system]
+requires = ["setuptools>=75.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+# ============================================================================
+# Project Metadata
+# ============================================================================
+
+[project]
+name = "safecommit"
+version = "1.0.0"
+
+description = "A cross-platform CLI tool for detecting exposed API keys and sensitive information."
+
+readme = "README.md"
+
+requires-python = ">=3.11"
+
+license = "MIT"
+
+authors = [
+    { name = "Sushant Kumar Kushwaha" }
+]
+
+keywords = [
+    "security",
+    "secret-scanner",
+    "api-key",
+    "credentials",
+    "cli",
+    "developer-tools",
+    "python",
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Environment :: Console",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Security",
+    "Topic :: Software Development",
+    "Topic :: Utilities",
+]
+
+dependencies = [
+    "typer>=0.16.0",
+    "rich>=14.0.0",
+]
+
+
+# ============================================================================
+# Project URLs
+# ============================================================================
+
+[project.urls]
+Homepage = "https://github.com/sushantkr1187/SafeCommit"
+
+Repository = "https://github.com/sushantkr1187/SafeCommit"
+
+Issues = "https://github.com/sushantkr1187/SafeCommit/issues"
+
+
+# ============================================================================
+# CLI Entry Point
+# ============================================================================
+
+[project.scripts]
+safecommit = "safecommit.cli:main"
+
+
+# ============================================================================
+# Package Discovery
+# ============================================================================
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+# ============================================================================
+# Optional Tool Configurations
+# ============================================================================
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 88
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
