@@ -31,7 +31,7 @@ PATTERNS = [
     {
         "name": "AWS Access Key",
         "severity": "HIGH",
-        "regex": re.compile(r"AKIA[0-9A-Z]{16}")
+        "regex": re.compile(r'(?i)(aws_secret_access_key|aws_secret_key)\s*[:=]\s*["\']?[A-Za-z0-9/+=]{40}["\']?')
     },
 
     {
@@ -55,13 +55,49 @@ PATTERNS = [
     {
         "name": "Stripe Secret Key",
         "severity": "HIGH",
-        "regex": re.compile(r"sk_live_[A-Za-z0-9]{24,}")
+        "regex": re.compile(r"sk_(live|test)_[A-Za-z0-9]{24,}")
     },
 
     {
         "name": "Stripe Restricted Key",
         "severity": "HIGH",
-        "regex": re.compile(r"rk_live_[A-Za-z0-9]{24,}")
+        "regex": re.compile(r"rk_(live|test)_[A-Za-z0-9]{24,}")
+    },
+
+    {
+        "name": "GitLab Personal Access Token",
+        "severity": "HIGH",
+        "regex": re.compile(r"glpat-[A-Za-z0-9\-_]{20,}")
+    },
+
+    {
+        "name": "PyPI API Token",
+        "severity": "HIGH",
+        "regex": re.compile(r"pypi-[A-Za-zA-Z0-9_-]{50,}")
+    },
+
+    {
+        "name": "npm Access Token",
+        "severity": "HIGH",
+        "regex": re.compile(r"npm_[A-Za-z0-9]{36}")
+    },
+
+    {
+        "name": "Hugging Face Token",
+        "severity": "HIGH",
+        "regex": re.compile(r"hf_[A-Za-z0-9]{34,}")
+    },
+
+    {
+        "name": "Anthropic API Key",
+        "severity": "HIGH",
+        "regex": re.compile(r"sk-ant-[A-Za-z0-9\-_]{20,}")
+    },
+
+    {
+        "name": "Groq API Key",
+        "severity": "HIGH",
+        "regex": re.compile(r"gsk_[A-Za-z0-9]{32,}")
     },
 
     {
@@ -86,6 +122,11 @@ PATTERNS = [
         "name": "SendGrid API Key",
         "severity": "HIGH",
         "regex": re.compile(r"SG\.[A-Za-z0-9_-]{22}\.[A-Za-z0-9_-]{43}")
+    },
+    {
+        "name": "AWS Secret Access Key",
+        "severity": "HIGH",
+        "regex": re.compile(r"(?i)aws(.{0,20})?(secret|secret_access_key).{0,20}[=:]\s*[\"']?[A-Za-z0-9/+=]{40}[\"']?")
     },
 
     # ==========================================================
@@ -124,7 +165,7 @@ PATTERNS = [
         "name": "Private Key",
         "severity": "CRITICAL",
         "regex": re.compile(
-            r"-----BEGIN (RSA |EC |DSA |OPENSSH |)?PRIVATE KEY-----"
+            r"-----BEGIN (RSA |EC |DSA )?PRIVATE KEY-----"
         )
     },
 
@@ -172,7 +213,7 @@ PATTERNS = [
         "name": "Hardcoded Password",
         "severity": "MEDIUM",
         "regex": re.compile(
-            r'(?i)(password|passwd|pwd)\s*[:=]\s*["\'][^"\']{4,}["\']'
+            r'(?i)\b(password|passwd|pwd|db_password|mysql_password|postgres_password)\b\s*[:=]\s*["\'][^"\']{6,}["\']'
         )
     },
 
@@ -180,7 +221,7 @@ PATTERNS = [
         "name": "Hardcoded Secret",
         "severity": "MEDIUM",
         "regex": re.compile(
-            r'(?i)(secret|secret_key)\s*[:=]\s*["\'][^"\']+["\']'
+            r'(?i)\b[a-z0-9_]*(secret|secret_key|client_secret|app_secret|jwt_secret|api_secret)[a-z0-9_]*\b\s*[:=]\s*["\'][^"\']{8,}["\']'
         )
     },
 
@@ -188,7 +229,7 @@ PATTERNS = [
         "name": "Hardcoded API Key Variable",
         "severity": "MEDIUM",
         "regex": re.compile(
-            r'(?i)(api[_-]?key)\s*[:=]\s*["\'][^"\']+["\']'
+            r'(?i)\b[a-z0-9_]*(api[_-]?key|apikey|access[_-]?key|client[_-]?key|public[_-]?key)[a-z0-9_]*\b\s*[:=]\s*["\'][^"\']{8,}["\']'
         )
     },
 
@@ -196,7 +237,7 @@ PATTERNS = [
         "name": "Hardcoded Token Variable",
         "severity": "MEDIUM",
         "regex": re.compile(
-            r'(?i)(token|access_token|auth_token)\s*[:=]\s*["\'][^"\']+["\']'
+            r'(?i)\b[a-z0-9_]*(token|auth_token|access_token|refresh_token|bearer_token|github_token|discord_token|slack_token|jwt_token)[a-z0-9_]*\b\s*[:=]\s*["\'][^"\']{8,}["\']'
         )
     },
 
