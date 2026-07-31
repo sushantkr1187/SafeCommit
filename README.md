@@ -1,83 +1,58 @@
 # SafeCommit
-A cross-platform Python CLI that scans projects for exposed API keys, secrets, credentials, and sensitive information before you commit.
 
-It recursively scans project files using pattern-based detection and reports potential security risks with file locations, line numbers, severity levels, and matched patterns.
+A lightweight, cross-platform Python CLI that scans projects for exposed API keys, credentials, tokens, connection strings, private keys, and other sensitive information **before you commit**.
+
+Prevent accidentally leaking secrets to Git repositories with fast, recursive, regex-based scanning.
 
 ---
 
 ## Features
 
-- Cross-platform support (Windows, Linux, macOS)
-- Recursive directory scanning
-- Detects common API keys and credentials
-- Detects private keys, certificates, and tokens
-- Rich terminal output
-- Fast regex-based scanning
-- Lightweight and easy to use
+- 🔍 Detects **25+ common secret types**
+- 📂 Recursive project scanning
+- ⚡ Fast regex-based detection
+- 🖥️ Cross-platform (Windows, Linux, macOS)
+- 🎨 Beautiful terminal output powered by Rich
+- 📄 Reports file path, line number, severity, matched pattern, and matched value
+- 📦 Lightweight with zero external services
+- 🚀 Simple installation using `pip`
 
 ---
 
 ## Installation
 
-Clone the repository:
+Install from PyPI:
 
 ```bash
-git clone https://github.com/sushantkr1187/SafeCommit.git
-cd SafeCommit
+pip install safecommit-cli
 ```
 
-Create a virtual environment (recommended):
-
-```bash
-python -m venv .venv
-```
-
-Activate it.
-
-Windows
-
-```bash
-.venv\Scripts\activate
-```
-
-Linux / macOS
-
-```bash
-source .venv/bin/activate
-```
-
-Install the package in editable mode:
-
-```bash
-pip install -e .
-```
-
----
-
-## Usage
-
-Scan the current directory
-
-```bash
-safecommit scan .
-```
-
-Scan another project
-
-```bash
-safecommit scan /path/to/project
-```
-
-Show version
+Verify installation:
 
 ```bash
 safecommit --version
 ```
 
-or
+---
+
+## Quick Start
+
+Scan the current project:
 
 ```bash
-safecommit -v
+safecommit scan .
+```
+
+Scan another directory:
+
+```bash
+safecommit scan /path/to/project
+```
+
+Example:
+
+```bash
+safecommit scan D:\Projects\MyApp
 ```
 
 ---
@@ -85,42 +60,68 @@ safecommit -v
 ## Example Output
 
 ```text
-Scanning: D:\Projects\MyProject
+Scanning: D:\Projects\MyApp
 
 Found 2 potential issue(s).
 
-File      : backend/config.py
-Line      : 18
-Severity  : HIGH
-Pattern   : OpenAI API Key
-Match      : sk-proj-************************
+╭──────────── Secret Detected ────────────╮
+│ File      : backend/config.py           │
+│ Line      : 18                          │
+│ Severity  : HIGH                        │
+│ Pattern   : OpenAI API Key              │
+│ Match     : sk-proj-****************    │
+╰─────────────────────────────────────────╯
 ```
 
 ---
 
-## Currently Detected
+## Supported Secret Types
+
+### API Keys & Tokens
 
 - OpenAI API Keys
 - GitHub Personal Access Tokens
 - AWS Access Keys
+- AWS Secret Access Keys
 - Google API Keys
-- Google OAuth Credentials
-- Azure Storage Connection Strings
-- Stripe API Keys
+- Google OAuth Tokens
+- Stripe Secret Keys
+- Stripe Restricted Keys
 - Twilio API Keys
 - Slack Tokens
-- Discord Tokens
-- JWT Tokens
-- Bearer Tokens
+- Discord Bot Tokens
+- Firebase Cloud Messaging Server Keys
+- SendGrid API Keys
+
+### Database Credentials
+
 - MongoDB URIs
 - PostgreSQL URIs
 - MySQL URIs
 - Redis URIs
+
+### Authentication & Secrets
+
+- JWT Tokens
+- Bearer Tokens
 - Hardcoded Passwords
-- Private Keys
-- SSH Keys
-- PGP Keys
-- Certificates
+- Hardcoded Secrets
+- Hardcoded API Keys
+- Hardcoded Token Variables
+
+### Private Keys & Certificates
+
+- RSA Private Keys
+- EC Private Keys
+- DSA Private Keys
+- OpenSSH Private Keys
+- PGP Private Keys
+- X.509 Certificates
+
+### Cloud Credentials
+
+- Azure Storage Connection Strings
+- Heroku API Keys
 
 ---
 
@@ -129,19 +130,20 @@ Match      : sk-proj-************************
 ```text
 SafeCommit/
 │
-├── .gitignore
+├── src/
+│   └── safecommit/
+│       ├── __init__.py
+│       ├── cli.py
+│       ├── scanner.py
+│       ├── patterns.py
+│       └── utils.py
+│
+├── tests/
+├── README.md
 ├── CHANGELOG.md
 ├── LICENSE
 ├── pyproject.toml
-├── README.md
-│
-└── src/
-    └── safecommit/
-        ├── __init__.py
-        ├── cli.py
-        ├── scanner.py
-        ├── patterns.py
-        └── utils.py
+└── .gitignore
 ```
 
 ---
@@ -150,13 +152,13 @@ SafeCommit/
 
 Contributions, bug reports, feature requests, and improvements are welcome.
 
-Please open an issue before submitting major changes.
+If you'd like to contribute, feel free to open an issue or submit a pull request.
 
 ---
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
 
 ---
 
@@ -164,4 +166,4 @@ This project is licensed under the MIT License.
 
 **Sushant Kumar Kushwaha**
 
-GitHub: https://github.com/sushantkr1187
+GitHub: **https://github.com/sushantkr1187**
