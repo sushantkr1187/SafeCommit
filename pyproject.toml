@@ -12,7 +12,7 @@ build-backend = "setuptools.build_meta"
 # ============================================================================
 
 [project]
-name = "safecommit"
+name = "safecommit-cli"
 version = "1.0.1"
 
 description = "A lightweight cross-platform CLI that detects exposed secrets, API keys, credentials, tokens, and sensitive information before you commit."
@@ -52,8 +52,6 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
-
-    "License :: OSI Approved :: MIT License",
 
     "Topic :: Security",
     "Topic :: Security :: Cryptography",
