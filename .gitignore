@@ -1,29 +1,45 @@
-# Virtual Environment
-.venv/
-venv/
+# ==========================================
+# Python
+# ==========================================
 
-# Python Cache
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Build Artifacts
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Distribution / packaging
 build/
 dist/
 *.egg-info/
+.eggs/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Type checking
+.mypy_cache/
+.pytype/
+
+# Linting
+.ruff_cache/
 
 # IDE
 .vscode/
 .idea/
 
-# OS Files
+# OS
 .DS_Store
 Thumbs.db
 
-# Test & Coverage
-.pytest_cache/
-.coverage
-htmlcov/
+# Jupyter
+.ipynb_checkpoints/
 
-# Misc
+# Logs
 *.log
