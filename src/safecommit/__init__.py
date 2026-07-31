@@ -25,6 +25,7 @@ MIT License
 """
 
 from __future__ import annotations
+from importlib.metadata import version
 
 __title__ = "safecommit"
 __description__ = (
@@ -32,7 +33,7 @@ __description__ = (
     "and sensitive information."
 )
 
-__version__ = "1.0.0"
+__version__ = version("safecommit-cli")
 
 __author__ = "Sushant Kumar Kushwaha"
 __email__ = "sushantkr772@gmail.com"
