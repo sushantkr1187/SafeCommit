@@ -13,9 +13,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "safecommit"
-version = "1.0.0"
+version = "1.0.1"
 
-description = "A cross-platform CLI tool for detecting exposed API keys and sensitive information."
+description = "A lightweight cross-platform CLI that detects exposed secrets, API keys, credentials, tokens, and sensitive information before you commit."
 
 readme = "README.md"
 
@@ -30,24 +30,33 @@ authors = [
 keywords = [
     "security",
     "secret-scanner",
+    "secret-detection",
     "api-key",
     "credentials",
+    "token",
+    "git",
     "cli",
     "developer-tools",
+    "cybersecurity",
     "python",
 ]
 
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Environment :: Console",
     "Operating System :: OS Independent",
+
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
+
+    "License :: OSI Approved :: MIT License",
+
     "Topic :: Security",
+    "Topic :: Security :: Cryptography",
     "Topic :: Software Development",
     "Topic :: Utilities",
 ]
@@ -59,15 +68,31 @@ dependencies = [
 
 
 # ============================================================================
+# Optional Dependencies
+# ============================================================================
+
+[project.optional-dependencies]
+
+dev = [
+    "pytest>=8.4",
+    "black>=25.0",
+    "ruff>=0.12",
+]
+
+
+# ============================================================================
 # Project URLs
 # ============================================================================
 
 [project.urls]
+
 Homepage = "https://github.com/sushantkr1187/SafeCommit"
 
 Repository = "https://github.com/sushantkr1187/SafeCommit"
 
 Issues = "https://github.com/sushantkr1187/SafeCommit/issues"
+
+Changelog = "https://github.com/sushantkr1187/SafeCommit/blob/main/CHANGELOG.md"
 
 
 # ============================================================================
@@ -75,6 +100,7 @@ Issues = "https://github.com/sushantkr1187/SafeCommit/issues"
 # ============================================================================
 
 [project.scripts]
+
 safecommit = "safecommit.cli:main"
 
 
@@ -83,22 +109,40 @@ safecommit = "safecommit.cli:main"
 # ============================================================================
 
 [tool.setuptools]
+
 package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
+
 where = ["src"]
 
 
 # ============================================================================
-# Optional Tool Configurations
+# Formatting
 # ============================================================================
 
 [tool.black]
+
 line-length = 88
+
 target-version = ["py311"]
 
+
+# ============================================================================
+# Ruff
+# ============================================================================
+
 [tool.ruff]
+
 line-length = 88
 
+target-version = "py311"
+
+
+# ============================================================================
+# Pytest
+# ============================================================================
+
 [tool.pytest.ini_options]
+
 testpaths = ["tests"]
