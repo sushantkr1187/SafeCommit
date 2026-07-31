@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+.r1 {color: #008080; text-decoration-color: #008080}
+.r2 {color: #800000; text-decoration-color: #800000; font-weight: bold}
+.r3 {color: #800000; text-decoration-color: #800000}
+.r4 {color: #800080; text-decoration-color: #800080}
+.r5 {color: #808000; text-decoration-color: #808000}
+.r6 {font-weight: bold}
+body {
+    color: #000000;
+    background-color: #ffffff;
+}
+</style>
+</head>
+<body>
+    <pre style="font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><code style="font-family:inherit">
+Scanning: <span class="r1">D:\WebDev\SafeCommit\tests\demo1</span>
+
+<span class="r2">Found </span><span class="r2">11</span><span class="r2"> potential issue(s).</span>
+
+<span class="r3">╭─────────────────────────────────────────────────────── Secret Detected ────────────────────────────────────────────────────────╮</span>
+<span class="r3">│</span> <span class="r1">File      : D:\WebDev\SafeCommit\tests\demo1\.env</span>                                                                              <span class="r3">│</span>
+<span class="r3">│</span> <span class="r4">Line      : 2</span>                                                                                                                  <span class="r3">│</span>
+<span class="r3">│</span> <span class="r3">Severity  : HIGH</span>                                                                                                               <span class="r3">│</span>
+<span class="r3">│</span> <span class="r5">Pattern   : PostgreSQL URI</span>                                                                                                     <span class="r3">│</span>
+<span class="r3">│</span> <span class="r6">Match     : postgres://admin:password123@localhost:5432/demo_db</span>                                                                <span class="r3">│</span>
+<span class="r3">╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</span>
+<span class="r3">╭─────────────────────────────────────────────────────── Secret Detected ────────────────────────────────────────────────────────╮</span>
+<span class="r3">│</span> <span class="r1">File      : D:\WebDev\SafeCommit\tests\demo1\.env</span>                                                                              <span class="r3">│</span>
+<span class="r3">│</span> <span class="r4">Line      : 9</span>                                                                                                                  <span class="r3">│</span>
+<span class="r3">│</span> <span class="r3">Severity  : HIGH</span>                                                                                                               <span class="r3">│</span>
+<span class="r3">│</span> <span class="r5">Pattern   : GitHub Personal Access Token</span>                                                                                       <span class="r3">│</span>
+<span class="r3">│</span> <span class="r6">Match     : ghp_demoabcdefghijklmnopqrstuvwxyz1234567890</span>                                                                       <span class="r3">│</span>
+<span class="r3">╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</span>
+<span class="r3">╭─────────────────────────────────────────────────────── Secret Detected ────────────────────────────────────────────────────────╮</span>
+<span class="r3">│</span> <span class="r1">File      : D:\WebDev\SafeCommit\tests\demo1\.env</span>                                                                              <span class="r3">│</span>
+<span class="r3">│</span> <span class="r4">Line      : 12</span>                                                                                                                 <span class="r3">│</span>
+<span class="r3">│</span> <span class="r3">Severity  : HIGH</span>                                                                                                               <span class="r3">│</span>
+<span class="r3">│</span> <span class="r5">Pattern   : OpenAI API Key</span>                                                                                                     <span class="r3">│</span>
+<span class="r3">│</span> <span class="r6">Match     : sk-proj-demo-abcdefghijklmnopqrstuvwxyz123456789</span>                                                                   <span class="r3">│</span>
+<span class="r3">╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</span>
+<span class="r3">╭─────────────────────────────────────────────────────── Secret Detected ────────────────────────────────────────────────────────╮</span>
+<span class="r3">│</span> <span class="r1">File      : D:\WebDev\SafeCommit\tests\demo1\.env</span>                                                                              <span class="r3">│</span>
+<span class="r3">│</span> <span class="r4">Line      : 15</span>                                                                                                                 <span class="r3">│</span>
+<span class="r3">│</span> <span class="r3">Severity  : HIGH</span>                                                                                                               <span class="r3">│</span>
+<span class="r3">│</span> <span class="r5">Pattern   : Stripe Secret Key</span>                                                                                                  <span class="r3">│</span>
+<span class="r3">│</span> <span class="r6">Match     : sk_test_51QDemoExample123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>                                                          <span class="r3">│</span>
+<span class="r3">╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</span>
+<span class="r3">╭─────────────────────────────────────────────────────── Secret Detected ────────────────────────────────────────────────────────╮</span>
+<span class="r3">│</span> <span class="r1">File      : D:\WebDev\SafeCommit\tests\demo1\firebase.js</span>                                                                       <span class="r3">│</span>
+<span class="r3">│</span> <span class="r4">Line      : 2</span>                                                                                                                  <span class="r3">│</span>
+<span class="r3">│</span> <span class="r3">Severity  : HIGH</span>                                                                                                               <span class="r3">│</span>
+<span class="r3">│</span> <span class="r5">Pattern   : Google API Key</span>                                                                                                     <span class="r3">│</span>
+<span class="r3">│</span> <span class="r6">Match     : AIzaSyDemoGoogleAPIKeyABCDEFGHIJKLMNOPQ</span>                                                                            <span class="r3">│</span>
+<span class="r3">╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</span>
+<span class="r5">╭─────────────────────────────────────────────────────── Secret Detected ────────────────────────────────────────────────────────╮</span>
+<span class="r5">│</span> <span class="r1">File      : D:\WebDev\SafeCommit\tests\demo1\firebase.js</span>                                                                       <span class="r5">│</span>
+<span class="r5">│</span> <span class="r4">Line      : 2</span>                                                                                                                  <span class="r5">│</span>
+<span class="r5">│</span> <span class="r5">Severity  : MEDIUM</span>                                                                                                             <span class="r5">│</span>
+<span class="r5">│</span> <span class="r5">Pattern   : Hardcoded API Key Variable</span>                                                                                         <span class="r5">│</span>
+<span class="r5">│</span> <span class="r6">Match     : apiKey: &quot;AIzaSyDemoGoogleAPIKeyABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>                                                         <span class="r5">│</span>
+<span class="r5">╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</span>
+<span class="r3">╭─────────────────────────────────────────────────────── Secret Detected ────────────────────────────────────────────────────────╮</span>
+<span class="r3">│</span> <span class="r1">File      : D:\WebDev\SafeCommit\tests\demo1\firebase.js</span>                                                                       <span class="r3">│</span>
+<span class="r3">│</span> <span class="r4">Line      : 11</span>                                                                                                                 <span class="r3">│</span>
+<span class="r3">│</span> <span class="r3">Severity  : HIGH</span>                                                                                                               <span class="r3">│</span>
+<span class="r3">│</span> <span class="r5">Pattern   : GitHub Personal Access Token</span>                                                                                       <span class="r3">│</span>
+<span class="r3">│</span> <span class="r6">Match     : ghp_demoabcdefghijklmnopqrstuvwxyz1234567890</span>                                                                       <span class="r3">│</span>
+<span class="r3">╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</span>
+<span class="r3">╭─────────────────────────────────────────────────────── Secret Detected ────────────────────────────────────────────────────────╮</span>
+<span class="r3">│</span> <span class="r1">File      : D:\WebDev\SafeCommit\tests\demo1\payment_service.py</span>                                                                <span class="r3">│</span>
+<span class="r3">│</span> <span class="r4">Line      : 4</span>                                                                                                                  <span class="r3">│</span>
+<span class="r3">│</span> <span class="r3">Severity  : HIGH</span>                                                                                                               <span class="r3">│</span>
+<span class="r3">│</span> <span class="r5">Pattern   : Stripe Secret Key</span>                                                                                                  <span class="r3">│</span>
+<span class="r3">│</span> <span class="r6">Match     : sk_test_51QDemoExample123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>                                                          <span class="r3">│</span>
+<span class="r3">╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</span>
+<span class="r5">╭─────────────────────────────────────────────────────── Secret Detected ────────────────────────────────────────────────────────╮</span>
+<span class="r5">│</span> <span class="r1">File      : D:\WebDev\SafeCommit\tests\demo1\payment_service.py</span>                                                                <span class="r5">│</span>
+<span class="r5">│</span> <span class="r4">Line      : 4</span>                                                                                                                  <span class="r5">│</span>
+<span class="r5">│</span> <span class="r5">Severity  : MEDIUM</span>                                                                                                             <span class="r5">│</span>
+<span class="r5">│</span> <span class="r5">Pattern   : Hardcoded Secret</span>                                                                                                   <span class="r5">│</span>
+<span class="r5">│</span> <span class="r6">Match     : STRIPE_SECRET_KEY = &quot;sk_test_51QDemoExample123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>                                    <span class="r5">│</span>
+<span class="r5">╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</span>
+<span class="r3">╭─────────────────────────────────────────────────────── Secret Detected ────────────────────────────────────────────────────────╮</span>
+<span class="r3">│</span> <span class="r1">File      : D:\WebDev\SafeCommit\tests\demo1\payment_service.py</span>                                                                <span class="r3">│</span>
+<span class="r3">│</span> <span class="r4">Line      : 5</span>                                                                                                                  <span class="r3">│</span>
+<span class="r3">│</span> <span class="r3">Severity  : HIGH</span>                                                                                                               <span class="r3">│</span>
+<span class="r3">│</span> <span class="r5">Pattern   : OpenAI API Key</span>                                                                                                     <span class="r3">│</span>
+<span class="r3">│</span> <span class="r6">Match     : sk-proj-demo-abcdefghijklmnopqrstuvwxyz123456789</span>                                                                   <span class="r3">│</span>
+<span class="r3">╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</span>
+<span class="r5">╭─────────────────────────────────────────────────────── Secret Detected ────────────────────────────────────────────────────────╮</span>
+<span class="r5">│</span> <span class="r1">File      : D:\WebDev\SafeCommit\tests\demo1\payment_service.py</span>                                                                <span class="r5">│</span>
+<span class="r5">│</span> <span class="r4">Line      : 5</span>                                                                                                                  <span class="r5">│</span>
+<span class="r5">│</span> <span class="r5">Severity  : MEDIUM</span>                                                                                                             <span class="r5">│</span>
+<span class="r5">│</span> <span class="r5">Pattern   : Hardcoded API Key Variable</span>                                                                                         <span class="r5">│</span>
+<span class="r5">│</span> <span class="r6">Match     : OPENAI_API_KEY = &quot;sk-proj-demo-abcdefghijklmnopqrstuvwxyz123456789&quot;</span>                                                <span class="r5">│</span>
+<span class="r5">╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</span>
+</code></pre>
+</body>
+</html>
