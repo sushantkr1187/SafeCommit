@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+
+  database:
+    image: postgres:15
+
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: PostgreSQL@123
+      POSTGRES_DB: storedb
+
+    ports:
+      - "5432:5432"

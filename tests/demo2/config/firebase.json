@@ -1,0 +1,9 @@
+{
+    "project_id": "safecommit-demo",
+
+    "apiKey": "AIzaSyDabcdefghijklmnopqrstuvwxyz",
+
+    "authDomain": "demo.firebaseapp.com",
+
+    "storageBucket": "demo.appspot.com"
+}

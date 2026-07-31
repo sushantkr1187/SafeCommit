@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: shop-api
+
+spec:
+
+  replicas: 2
+
+  template:
+
+    spec:
+
+      containers:
+
+      - name: api
+
+        image: shop-api:latest
+
+        env:
+
+        - name: JWT_SECRET
+
+          value: "my-super-secret-production-key"
+
+        - name: DATABASE_URL
+
+          value: "mongodb://admin:MongoPass123@mongo:27017/store"
