@@ -139,6 +139,7 @@ SafeCommit/
 │       └── utils.py
 │
 ├── tests/
+├── documentation.pdf
 ├── README.md
 ├── CHANGELOG.md
 ├── LICENSE
