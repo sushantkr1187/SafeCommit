@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is inspired by **Keep a Changelog**, and this project follows **Semantic Versioning**.
 
+## [1.0.2] - 2026-11-01
+
+### Added
+
+- **Directory Exclusion:** Added support for excluding specified directories from recursive scanning.
+- **JSON Output:** Added JSON output support for structured scan results, making integration with other tools easier.
+- Added additional test data for validating secret detection.
+- Expanded regular expression coverage for detecting sensitive information.
+
+### Improved
+
+- Enhanced scanning flexibility through directory exclusion support.
+- Improved secret detection coverage with additional regex patterns and test cases.
+
 ---
 
 ## [1.0.1] - 2026-07-31
